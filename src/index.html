@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Anitrone</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="render.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- PNG Export (Grid Container Capture) Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+</head>
+<body class="content">
+    <div id="anitrone">
+        <div class="grid_base" id="container">
+            <img src="images/dot.png" id="imgbase0" width = "120" height = "120"/>
+            <img src="images/dot.png" id="imgbase1" width = "120" height = "120">
+            <img src="images/dot.png" id="imgbase2" width = "120" height = "120">
+            <img src="images/dot.png" id="imgbase3" width = "120" height = "120">
+            <img src="images/dot.png" id="imgbase4" width = "120" height = "120">
+            <img src="images/dot.png" id="imgbase5" width = "120" height = "120">
+            <img src="images/dot.png" id="imgbase6" width = "120" height = "120">
+            <img src="images/dot.png" id="imgbase7" width = "120" height = "120">
+        </div>
+        <div class="grid_glow" id="container_glow">
+            <img src="images/dot_glow.png" id="imgglow0" width = "120" height = "120" onclick="switchImage(0)">
+            <img src="images/dot_glow.png" id="imgglow1" width = "120" height = "120" onclick="switchImage(1)">
+            <img src="images/dot_glow.png" id="imgglow2" width = "120" height = "120" onclick="switchImage(2)">
+            <img src="images/dot_glow.png" id="imgglow3" width = "120" height = "120" onclick="switchImage(3)">
+            <img src="images/dot_glow.png" id="imgglow4" width = "120" height = "120" onclick="switchImage(4)">
+            <img src="images/dot_glow.png" id="imgglow5" width = "120" height = "120" onclick="switchImage(5)">
+            <img src="images/dot_glow.png" id="imgglow6" width = "120" height = "120" onclick="switchImage(6)">
+            <img src="images/dot_glow.png" id="imgglow7" width = "120" height = "120" onclick="switchImage(7)">
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="startButton" id="startBtn">Start</button>
+        <button onclick="stop()" class="stopButton" id="stopBtn">Stop</button>
+        <button onclick="reset()" class="resetButton" id="resetBtn">Reset</button>
+    </div>
+    <script src="app.js" charset="utf-8"></script>
+    <div id="tempo">
+        <p>Bpm (120, 150, 180)</p>
+        <label for="tempo">Bpm:</label>
+        <input type="text" id="tempoinput" value="120"><br><br>
+        <p></p>
+    </div>
+    <div id="crossfadeform">
+        <p>Crossfade (set both between 1-1000)</p>
+        <label for="crossfade speed">Attack/Release:</label>
+        <input type="text" id="cfspeed" value="100"><br><br>
+        <p></p>
+        <label for="crossfade on/off">Hold: </label>
+        <input type="text" id="cfhold" value="500"><br><br>
+        <p></p>
+        <p>Help chart:</p>
+        <p>bpm 120 = 500ms</p>
+        <p>bpm 150 = 400ms</p>
+        <p>bpm 180 = 333ms</p>
+    </div>
+    <div id="bgcolorform">
+        <p></p>
+        <label for="bgcolor">Background: </label>
+        <input type="text" id="bgcolor" value="#222"><br><br>
+        <input type="submit" value="Set" onclick="bgcolor()">
+        <p>---------------------------------------------------------</p>
+        <p> write: red, green, blue, pink, white...</p>
+        <p>---------------------------------------------------------</p>
+        <p>Hexadecimal:</p>
+        <p> Shades of Gray: #000, #111, #222, #333, #444, #555, #666,</p>
+        <p>  #777, #888, #999, #aaa, #bbb, #ccc, #ddd, #eee, #fff </p>
+        <p>---------------------------------------------------------</p>
+        <p>All colors (pick color and paste in format like #000000)</p>
+        <a href="https://htmlcolorcodes.com/color-picker/">https://htmlcolorcodes.com/color-picker/</a>
+        <p></p>
+    </div>
+    <canvas id="canvas" width="1040" height="200"></canvas>
+
+</body>
+</html>

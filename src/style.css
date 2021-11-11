@@ -1,0 +1,84 @@
+
+:root {
+ --fadeinrate: opacity 1.0s ease-in-out;
+}
+
+body {
+    background: #111;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.grid_base, .grid_glow {
+    display: grid;
+    width: 1040px;
+    height: 200px;
+    border: 1px solid gray;
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    grid-template-columns: repeat(8, 122px);
+    grid-template-rows: 200px;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid_base {
+    background: #000;
+}
+
+.grid_base > img, .grid_glow > img {
+    margin-left: 55px;
+    margin-top: 0px;
+}
+
+.grid_glow > img{
+    opacity: 0;
+    transition: var(--fadeinrate);
+}
+
+#container_glow img.fadein {
+    opacity: 1;
+}
+
+.buttons {
+    position: absolute;
+    top: 300px;
+}
+
+#bgcolorform {
+    position: absolute;
+    top: 390px;
+    left: 815px;
+    border: 1px solid gray;
+    display: none;
+}
+
+#crossfadeform {
+    position: absolute;
+    top: 390px;
+    left: 370px;
+    border: 1px solid gray;
+    display: none;
+}
+
+#tempo {
+    position: absolute;
+    top: 390px;
+    border: 1px solid gray;
+    display: none;
+}
+
+#canvas{
+    width: 1040px;
+    height: 200px;
+    border: 1px solid gray;
+    position: absolute;
+    top: 830px;
+    left: 10px;
+    display: none;
+}
+
+#stopBtn{
+    display: none;
+}
