@@ -75,30 +75,28 @@ function play()
     if (tempo === "180")
         var interval = 333;
 
-    //return new Promise((resolve,reject)=>{
-        var i = setInterval(function(){
+    var i = setInterval(function(){
 
-            trigger_glow(img_index)
+        trigger_glow(img_index)
 
-            img_index++;
-            if (img_index === 8)
-                img_index = 0;
+        img_index++;
+        if (img_index === 8)
+            img_index = 0;
 
-            counter++;
+        counter++;
+        
+        if (counter === 8){  //after all 8 images have been changed
+            clearInterval(i); //stopping the loop
+        }
+        //STOP ANIMATION BUTTON
+        /* $(document).ready(function() {
+            $("#stopbtn").click(function() {
+            clearInterval(i);
             
-            if (counter === 8){  //after all 8 images have been changed
-                clearInterval(i); //stopping the loop
-                //resolve();
-            }
-            //STOP ANIMATION BUTTON
-            /* $(document).ready(function() {
-                $("#stopbtn").click(function() {
-                clearInterval(i);
-                
-            });
-            }); */
+        });
+        }); */
 
-        }, interval);
+    }, interval);
         
             
         

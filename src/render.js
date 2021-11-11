@@ -29,17 +29,6 @@ desktopCapturer.getSources({ types: ['window', 'screen'] }).then(async sources =
       const recordedChunks = [];
       
 
-     /*  const startBtn = document.getElementById('startBtn');
-      startBtn.onclick = async function(){
-        startBtn.innerText = 'Recording';
-        mediaRecorder.start();
-        await playanimation.play();
-        mediaRecorder.stop();
-        startBtn.innerText = 'Start';
-        console.log('check async');
-      } */
-      
-
       const startBtn = document.getElementById('startBtn');
       startBtn.onclick = function(){
         startBtn.innerText = 'Recording';
