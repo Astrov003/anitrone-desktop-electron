@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Anitrone</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">   
     <script defer src="render.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- PNG Export (Grid Container Capture) Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <script>window.$ = window.jQuery = require('./js/jquery-3.6.0.min.js');</script>
 </head>
 <body class="content">
     <div id="anitrone">
@@ -38,8 +34,8 @@
         <button onclick="start()" class="startButton" id="startBtn">Start</button>
         <button onclick="stop()" class="stopButton" id="stopBtn">Stop</button>
         <button onclick="reset()" class="resetButton" id="resetBtn">Reset</button>
-    </div>
-    <script src="app.js" charset="utf-8"></script>
+    </div>    
+    <script src="app.js" charset="utf-8"></script>  
     <div id="tempo">
         <p>Bpm (120, 150, 180)</p>
         <label for="tempo">Bpm:</label>
@@ -76,6 +72,5 @@
         <p></p>
     </div>
     <canvas id="canvas" width="1040" height="200"></canvas>
-
 </body>
 </html>

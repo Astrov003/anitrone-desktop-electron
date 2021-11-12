@@ -41,7 +41,6 @@ function reset()
 
 function trigger_glow(img_index)
 {
-
     //crossfade hold
 
     var cfhold = document.getElementById('cfhold').value;
