@@ -60,7 +60,6 @@ function trigger_glow(img_index)
 
 function play()
 {
-    console.log('check import');
     var loop = 0; //loop true or false
     var counter = 0;
 

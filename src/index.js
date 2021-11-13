@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
 const remote = require('@electron/remote/main');
+const { start } = require('repl');
 remote.initialize()
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
