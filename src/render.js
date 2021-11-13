@@ -42,10 +42,10 @@ function start()
             mandatory: {
               chromeMediaSource: 'desktop',
               chromeMediaSourceId: source.id,
-              minWidth: 1080,
-              maxWidth: 1080,
-              minHeight: 380,
-              maxHeight: 380
+              minWidth: 1040,
+              maxWidth: 1040,
+              minHeight: 200,
+              maxHeight: 200
             }
           }
         })

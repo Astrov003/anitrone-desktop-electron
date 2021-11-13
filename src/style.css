@@ -13,10 +13,10 @@ body {
     display: grid;
     width: 1040px;
     height: 200px;
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
     position: absolute;
-    top: 75px;
-    left: 10px;
+    top: 0px;
+    left: 0px;
     grid-template-columns: repeat(8, 122px);
     grid-template-rows: 200px;
     align-items: center;
@@ -44,6 +44,7 @@ body {
 .buttons {
     position: absolute;
     top: 300px;
+    display: none;
 }
 
 #bgcolorform {
