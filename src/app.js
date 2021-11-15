@@ -39,19 +39,27 @@ function reset()
 }
 
 
-function trigger_glow(img_index)
+function trigger_glow(img_index, tempo)
 {
     //crossfade hold
+    if (tempo === 120){
+        var cfhold = 500;
+        var fadeinrate = 'opacity 0.1s ease-in-out';
+    }
+    if (tempo === 150){
+        var cfhold = 400;
+        var fadeinrate = 'opacity 0.1s ease-in-out';
+    }
+    if (tempo === 180){
+        var cfhold = 333;
+        var fadeinrate = 'opacity 0.1s ease-in-out';
+    }
 
-    var cfhold = document.getElementById('cfhold').value;
     $("#container_glow img#imgglow"+img_index).toggleClass("fadein");
 
     setTimeout(function() {
         $("#container_glow img#imgglow"+img_index).toggleClass("fadein");
     }, cfhold);
-
-    var cfspeed = document.getElementById('cfspeed').value;
-    var fadeinrate = 'opacity ' + cfspeed/1000 + 's' + ' ease-in-out'
 
     var r = document.querySelector(':root');
     r.style.setProperty('--fadeinrate', fadeinrate);
@@ -74,14 +82,14 @@ function play(tempo)
 
     var i = setInterval(function(){
 
-        trigger_glow(img_index)
+        trigger_glow(img_index, tempo)
 
         img_index++;
         if (img_index === 8)
             img_index = 0;
 
         counter++;
-        
+
         if (counter === 8){  //after all 8 images have been changed
             clearInterval(i); //stopping the loop
         }
@@ -89,17 +97,17 @@ function play(tempo)
         /* $(document).ready(function() {
             $("#stopbtn").click(function() {
             clearInterval(i);
-            
+
         });
         }); */
 
     }, interval);
-        
-            
-        
+
+
+
     //});
 
-    
+
 }
 
 function bgcolor()
