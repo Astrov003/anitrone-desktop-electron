@@ -58,19 +58,18 @@ function trigger_glow(img_index)
 }
 
 
-function play()
+function play(tempo)
 {
-    var loop = 0; //loop true or false
     var counter = 0;
 
     var img_index = 0;
 
-    var tempo = document.getElementById('tempoinput').value;
-    if (tempo === "120")
+    //var tempo = document.getElementById('tempoinput').value;
+    if (tempo === 120)
         var interval = 500;
-    if (tempo === "150")
+    if (tempo === 150)
         var interval = 400;
-    if (tempo === "180")
+    if (tempo === 180)
         var interval = 333;
 
     var i = setInterval(function(){

@@ -14,25 +14,38 @@ menu.append(new MenuItem({
   {
     label: '120',
     accelerator: process.platform === 'darwin' ? 'Cmd+1' : 'Ctrl+1',
-    click: () => { start () }
+    click: () => { start(120) }
   },
   {
     label: '150',
     accelerator: process.platform === 'darwin' ? 'Cmd+2' : 'Ctrl+2',
-    click: () => { start () },
+    click: () => { start(150) },
   },
   {
     label: '180',
     accelerator: process.platform === 'darwin' ? 'Cmd+3' : 'Ctrl+3',
-    click: () => { start () },
+    click: () => { start(180) },
   }
 ]
 }))
 
 Menu.setApplicationMenu(menu)
 
-function start()
+function start(tempo)
 {
+  if (tempo === 120){
+      var interval1 = 500;
+      var interval2 = 5000;
+  }
+  if (tempo === 150){
+      var interval1 = 400;
+      var interval2 = 4000;
+  }
+  if (tempo === 180){
+      var interval1 = 333;
+      var interval2 = 3330;
+  }
+
   desktopCapturer.getSources({ types: ['window', 'screen'] }).then(async sources => {
     for (const source of sources) {
       if (source.name === 'Anitrone') {
@@ -53,23 +66,23 @@ function start()
         // Global state
         let mediaRecorder; // MediaRecorder instance to capture footage
         const recordedChunks = [];
-        
+
 
         const startBtn = document.getElementById('startBtn');
-    
-        
+
+
         startBtn.innerText = 'Recording';
-        
-        playanimation.play();
+
+        playanimation.play(tempo);
         setTimeout(() => {
           mediaRecorder.start();
-        }, 500);
+      }, interval1);
 
         setTimeout(() => {
           mediaRecorder.stop();
           startBtn.innerText = 'Start';
-        }, 5000);
-        
+      }, interval2);
+
 
 
         // Create the Media Recorder
