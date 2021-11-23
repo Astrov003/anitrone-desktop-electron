@@ -34,16 +34,16 @@ Menu.setApplicationMenu(menu)
 function start(tempo)
 {
   if (tempo === 120){
-      var interval1 = 500;
-      var interval2 = 5000;
+      var interval1 = 1000;
+      var interval2 = 10000;
   }
   if (tempo === 150){
-      var interval1 = 400;
-      var interval2 = 4000;
+      var interval1 = 800;
+      var interval2 = 8000;
   }
   if (tempo === 180){
-      var interval1 = 333;
-      var interval2 = 3330;
+      var interval1 = 666;
+      var interval2 = 6660;
   }
 
   desktopCapturer.getSources({ types: ['window', 'screen'] }).then(async sources => {
@@ -58,8 +58,9 @@ function start(tempo)
               minWidth: 1040,
               maxWidth: 1040,
               minHeight: 200,
-              maxHeight: 200
-            }
+              maxHeight: 200,
+            },
+          framerate: 30
           }
         })
 
@@ -86,7 +87,10 @@ function start(tempo)
 
 
         // Create the Media Recorder
-        const options = { mimeType: 'video/webm; codecs=vp9' };
+        const options = {
+        videoBitsPerSecond: 2500000,
+        mimeType: 'video/x-matroska; codecs=avc1'
+        };
         mediaRecorder = new MediaRecorder(stream, options);
 
         // Register Event Handlers
@@ -105,7 +109,7 @@ function start(tempo)
         // Saves the video file on stop
         async function handleStop(e) {
           const blob = new Blob(recordedChunks, {
-            type: 'video/webm; codecs=vp9'
+            type: 'video/x-matroska; codecs=avc1'
           });
 
           const buffer = Buffer.from(await blob.arrayBuffer());
@@ -113,7 +117,7 @@ function start(tempo)
 
           const { filePath } = await dialog.showSaveDialog({
             buttonLabel: 'Save video',
-            defaultPath: `vid-${Date.now()}.webm`
+            defaultPath: `vid-${Date.now()}.mkv`
           });
 
 

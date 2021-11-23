@@ -43,12 +43,12 @@ function trigger_glow(img_index, tempo)
 {
     //crossfade hold
     if (tempo === 120){
-        var cfhold = 500;
-        var fadeinrate = 'opacity 0.1s ease-in-out';
+        var cfhold = 125;
+        var fadeinrate = 'opacity 0.010s ease-in-out';
     }
     if (tempo === 150){
-        var cfhold = 400;
-        var fadeinrate = 'opacity 0.1s ease-in-out';
+        var cfhold = 125;
+        var fadeinrate = 'opacity 0.010s ease-in-out';
     }
     if (tempo === 180){
         var cfhold = 333;
@@ -74,11 +74,11 @@ function play(tempo)
 
     //var tempo = document.getElementById('tempoinput').value;
     if (tempo === 120)
-        var interval = 500;
+        var interval = 1000;
     if (tempo === 150)
-        var interval = 400;
+        var interval = 800;
     if (tempo === 180)
-        var interval = 333;
+        var interval = 666;
 
     var i = setInterval(function(){
 
