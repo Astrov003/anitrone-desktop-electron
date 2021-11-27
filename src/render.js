@@ -7,6 +7,9 @@ const { writeFile } = require('fs');
 
 const playanimation = require('./app');
 
+const { PythonShell } = require('python-shell')
+
+
 const menu = new Menu()
 menu.append(new MenuItem({
   label: 'Render',
@@ -14,7 +17,7 @@ menu.append(new MenuItem({
   {
     label: '120',
     accelerator: process.platform === 'darwin' ? 'Cmd+1' : 'Ctrl+1',
-    click: () => { start(120) }
+    click: () => { call_python() },
   },
   {
     label: '150',
@@ -28,6 +31,20 @@ menu.append(new MenuItem({
   }
 ]
 }))
+
+function call_python()
+{
+  let options = {
+    pythonPath: 'C:/Users/Vlajk/anaconda3/envs/appdev/python.exe',
+  };
+
+  PythonShell.run('render.py', null, function (err) {
+    if (err) throw err;
+    console.log('finished');
+  });
+
+}
+
 
 Menu.setApplicationMenu(menu)
 
@@ -130,3 +147,4 @@ function start(tempo)
     }
   })
 }
+
