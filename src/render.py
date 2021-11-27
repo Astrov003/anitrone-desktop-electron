@@ -25,9 +25,6 @@ file_name = f'{time_stamp}.mp4'
 fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 captured_video = cv2.VideoWriter(file_name, fourcc, 30.0, (rect.right-rect.left, rect.bottom-rect.top))
 
-print("python to js")
-sys.stdout.flush()
-
 
 while True:
     img = ImageGrab.grab(bbox=(rect.left, rect.top, rect.right, rect.bottom))

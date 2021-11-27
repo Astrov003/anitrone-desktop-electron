@@ -9,34 +9,6 @@ const playanimation = require('./app');
 
 const { PythonShell } = require('python-shell')
 
-const spawn = require("child_process").spawn;
-const pythonProcess = spawn('python', ["./src/render.py"]);
-
-pythonProcess.stdout.on('data', (data) => {
-  console.log(data)
-});
-
-const express = require('express')
-const app = express()
-
-app.get('/', (req, res) => {
-
-   const {
-      spawn
-   } = require('child_process');
-   const pyProg = spawn('python', ['./../pypy.py']);
-
-   pyProg.stdout.on('data', function(data) {
-
-      console.log(data.toString());
-      res.write(data);
-      res.end('end');
-   });
-})
-
-app.listen(4000, () => console.log('Application listening on port 4000!'))
-
-
 
 const menu = new Menu()
 menu.append(new MenuItem({

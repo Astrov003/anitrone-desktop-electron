@@ -14,16 +14,16 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     minWidth: 1040,
-    //maxWidth: 1040,
+    maxWidth: 1040,
     minHeight: 200,
-    //maxHeight: 200,
+    maxHeight: 200,
     useContentSize: true,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
-      //devTools: false
+      devTools: false
     }
   });
 
