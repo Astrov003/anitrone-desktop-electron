@@ -35,7 +35,7 @@ seconds = 8
 while True:
 
     current_time = time.time()
-    elapsed_time = current_time - time.time
+    elapsed_time = current_time - start_time
 
     img = ImageGrab.grab(bbox=(rect.left, rect.top, rect.right, rect.bottom))
     img_np = np.array(img)

@@ -17,7 +17,7 @@ menu.append(new MenuItem({
   {
     label: '120',
     accelerator: process.platform === 'darwin' ? 'Cmd+1' : 'Ctrl+1',
-    click: () => { call_python() },
+    click: () => { call_python(120) },
   },
   {
     label: '150',
@@ -32,18 +32,25 @@ menu.append(new MenuItem({
 ]
 }))
 
-function call_python()
+function call_python(tempo) 
 {
   let options = {
+    mode: 'text',
+    encoding: 'utf8',
+    pythonOptions: ['-u'],
+    args: [tempo],
     pythonPath: 'C:/Users/Vlajk/anaconda3/envs/appdev/python.exe',
   };
 
-  PythonShell.run('./src/render.py', null, function (err) {
-    if (err) throw err;
-    console.log('finished');
+  var test = new PythonShell('render.py', options);
+  test.on('message', function(message) {
+    console.log(message);
+    playanimation.play(120)
+    if (message == 120){
+      console.log('yes');
+      
+    }
   });
-
 }
-
 
 Menu.setApplicationMenu(menu)
