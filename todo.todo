@@ -1,0 +1,16 @@
+Visual:
+    //App dimensions - uklopiti dimenzije sa interfejsom
+    //Skloniti buttons
+
+Functionality:
+    Tempo:
+        crossfade
+        recording time in ms (setTimeout)
+
+    Export:
+        Proveriti zasto ne updatuje stream - izbacuje isti export od proslog puta.
+        
+        //Skloniti buttons sa UI, i napraviti system menu?
+        //Ili napraviti neki drugi nacin za pokretanje renderovanja (key combination?) 
+        //    crtl+1, crtl+2, ctrl+3 za 120, 150, 180?
+        //Ili oba..?
